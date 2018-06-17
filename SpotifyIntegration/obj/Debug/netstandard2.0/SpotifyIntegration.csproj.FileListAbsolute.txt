@@ -1,0 +1,9 @@
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\bin\Debug\netstandard2.0\SpotifyIntegration.deps.json
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\bin\Debug\netstandard2.0\SpotifyIntegration.dll
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\obj\Debug\netstandard2.0\SpotifyIntegration.csprojAssemblyReference.cache
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\obj\Debug\netstandard2.0\SpotifyIntegration.csproj.CoreCompileInputs.cache
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\obj\Debug\netstandard2.0\SpotifyIntegration.AssemblyInfoInputs.cache
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\obj\Debug\netstandard2.0\SpotifyIntegration.AssemblyInfo.cs
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\bin\Debug\netstandard2.0\SpotifyIntegration.pdb
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\obj\Debug\netstandard2.0\SpotifyIntegration.dll
+c:\users\johan\source\repos\TrackRecommender\SpotifyIntegration\obj\Debug\netstandard2.0\SpotifyIntegration.pdb

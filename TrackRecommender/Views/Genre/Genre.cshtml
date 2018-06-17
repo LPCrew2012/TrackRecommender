@@ -1,0 +1,87 @@
+﻿@model TrackRecommender.Models.FormModel
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
+    <script>
+        var valence = new Slider('#valence', {
+            formatter: function (value) {
+                return 'Current happiness: ' + value;
+            }
+        });
+
+        var slider = new Slider('#dancing', {
+            formatter: function (value) {
+                return 'Dancing probability: ' + value;
+            }
+        });
+    </script>
+}
+
+@section Styles
+{
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/Genre.css" rel="stylesheet" rel="stylesheet" type="text/css" />
+}
+
+@{
+    ViewBag.Title = "Cloud 9 track wizard";
+}
+
+<div class="jumbotron">
+    <h1>Your personalized track recommender</h1>
+    <p class="lead">Tell me a bit about yourself and I will hook you up with a few spotify tracks i think you might like.</p>
+</div>
+
+<h2>Tell me a bit about yourself.</h2>
+
+@using (Html.BeginForm("Tracks", "Tracks", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <label for="Name">Name</label>
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="Valence">How positive do you feel today?</label><br />
+        @Html.TextBoxFor(model => model.Valence, new { id = "valence", data_slider_id = "valence", data_slider_min = 0, data_slider_max = 100, data_slider_step = 1, data_slider_value = 50 })
+    </div>
+    <div class="form-group">
+        <label for="FeelLikeDancing">Do you feel like dancing?</label><br />
+        @Html.TextBoxFor(model => model.FeelLikeDancing, new { id = "dancing", data_slider_id = "dancing", data_slider_min = 0, data_slider_max = 100, data_slider_step = 1, data_slider_value = 50 })
+    </div>
+    if (Model.ErrorMessage != null)
+    {
+        <div class="">
+            <span class="warning">@Html.DisplayFor(m => m.ErrorMessage)</span>
+        </div>
+    }
+    
+
+    <div class="form-group">
+        <label for="Genres">What kind of music do you prefer?</label>
+    </div>
+    <div class="form-group">
+        @Html.ListBoxFor(model => model.SelectedGenres, Model.Genres)
+    </div>
+
+    <div class="form-group">
+        <label for="Artists">Select the artists you recognize and/or like. Or select none.</label>
+    </div>
+    <div class="form-group">
+        @Html.ListBoxFor(model => model.SelectedArtists, Model.Artists)
+    </div>
+
+
+    <div class="form-group">
+        <label for="Artists">And finally - select some tracks.</label>
+    </div>
+    <div class="form-group">
+        @Html.ListBoxFor(model => model.SelectedTracks, Model.Tracks)
+    </div>
+
+    <div>
+        <input type="submit" value="Get tracks!" />
+    </div>
+}
