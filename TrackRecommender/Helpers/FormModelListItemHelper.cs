@@ -49,8 +49,8 @@ namespace TrackRecommender.Helpers
                 new SelectListItem
                 {
                     Selected = false,
-                    Text = "Rap",
-                    Value = "rap"
+                    Text = "Hip hop",
+                    Value = "hip-hop"
                 },
                 new SelectListItem
                 {
